@@ -96,3 +96,10 @@ Same reasoning as in lists
 
 ## Howdy Partner and Gettin' Cozy Hints
 To copy a list, use ```list.copy()```
+
+## Ridin Bareback
+
+You should just know that if you have M1(n,p) and M2(p,l) then their multiplication will be M(n,l) with : 
+M[i][j]=Somme(M1[i][k]*M2[k][j], k allant de 1 à p
+
+## Let The Butcher Slice It
