@@ -6,7 +6,7 @@ def mat_mul(mat1, mat2):
     for i in range(len(mat1)):
         for j in range(len(mat2[0])):
             s = 0
-            for k in range(len(mat[1])):
+            for k in range(len(mat1[0])):
                 s = s + (mat1[i][k] * mat2[k][j])
             mat[i][j] = s
     return mat
