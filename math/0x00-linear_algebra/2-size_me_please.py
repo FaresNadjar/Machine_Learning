@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+
 """Retrieve a Matrix's Shape
 Returns:
 list: Matrix's Shape
