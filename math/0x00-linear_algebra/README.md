@@ -91,6 +91,6 @@ def add_arrays(arr1, arr2):
 
 ## Across The Planes
 
-Use the size me function to check if the shapes are equals, and then do a normal sum
+Same reasoning as in lists
 
 
