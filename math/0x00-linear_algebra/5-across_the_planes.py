@@ -8,7 +8,7 @@ def matrix_shape(matrix):
     return (shape)
 
 def add_matrices2D(mat1, mat2):
-    if (matrix_shape(mat1) != matrix_shape(mat2)):
+    if (!mat1 or !mat2 or matrix_shape(mat1) != matrix_shape(mat2)):
         return None
     mat = []
     for i in range(len(mat1)):
