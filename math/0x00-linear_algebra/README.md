@@ -1,14 +1,5 @@
 # Linear Algebra
 ## Slice Me Up 
-To slice a list l from x position to y position :```l[x:y]```. It starts at x and ends at y-1. Don't forget that the counters starts from 0 !!
-
-Let's suppose we have a list ```arr = [9, 8, 2, 3, 9, 4, 1, 0, 3]``` and we want to have slices of the list as follows : 
-
-* arr1 should be the first two numbers of arr
-* arr2 should be the last five numbers of arr
-* arr3 should be the 2nd through 6th numbers of arr
-
-Then here is the code to do it : 
 
 ```python
 #!/usr/bin/env python3
@@ -23,67 +14,49 @@ print("The 2nd through 6th numbers of the array are: {}".format(arr3))
 
 ## Trim Me Down
 
-Let's suppose we have a 2D matrix, and we want the middle to contain the 3rd and 4th columns of matrix. No conditional statements allowed, only one loop. 
-
-Then here is the code to do it : 
-
 ```python
 #!/usr/bin/env python3
 matrix = [[1, 3, 9, 4, 5, 8], [2, 4, 7, 3, 4, 0], [0, 3, 4, 6, 1, 5]]
 the_middle = []
 for i in matrix: 
-	the_middle.append([i[2], i[3]])
+    the_middle.append([i[2], i[3]])
 print("The middle columns of the matrix are: {}".format(the_middle))
 ```
 
 ## Size Me Please
 
-The best way to know the shape of a matrix is to turn it into a numpy array and takes it shape : 
-
 ```python
 #!/usr/bin/env python3
-import numpy as np
-def matrix_shape(matrix) : 
-	matrix = np.array(matrix)
-	return (list(matrix.shape))
-```
-
-Let's suppose you don't have the right to import modules :
-
-```python
-#!/usr/bin/env python3
-def matrix_shape(matrix) :
-    shape=[len(mat)]
-    test=mat[0]
-        while (isinstance(test, list)): 
-            shape.append(len(test))
-            test=test[0]
-    return shape
+def matrix_shape(matrix):
+    shape = [len(matrix)]
+    test = matrix[0]
+    while (isinstance(test, list)):
+        shape.append(len(test))
+        test = test[0]
+    return (shape)
 ```
 
 ## Flip Me Over
 
-How to transpose a matrix the classic way, without importing modules : 
-
 ```python
+#!/usr/bin/env python3
 def matrix_transpose(matrix):
     mat = []
     for i in range(len(matrix[0])):
         mat.append([])
         for j in range(len(matrix)):
             mat[i].append(matrix[j][i])
-    return(mat)
+    return mat
 ```
 
 ## Line Up
 
-How to add two lists :
-
 ```python
+#!/usr/bin/env python3
 def add_arrays(arr1, arr2):
     if (len(arr1) != len(arr2)):
         return None
-    arr=[]
+    arr = []
     for i in range(len(arr1)):
         arr.append(arr1[i] + arr2[i])
     return (arr)
@@ -91,17 +64,98 @@ def add_arrays(arr1, arr2):
 
 ## Across The Planes
 
-Same reasoning as in lists
+```python
+#!/usr/bin/env python3
+def add_matrices2D(mat1, mat2):
+    if (len(mat1) != len(mat2) or len(mat1[0]) != len(mat2[0])):
+        return None
+    mat = []
+    for i in range(len(mat1)):
+        mat.append([])
+        for j in range(len(mat1[0])):
+            mat[i].append(mat1[i][j] + mat2[i][j])
+    return mat
+```
 
+## Howdy Partner
 
-## Howdy Partner and Gettin' Cozy Hints
-To copy a list, use ```list.copy()```
+```python
+#!/usr/bin/env python3
+def cat_arrays(arr1, arr2):
+    arr = arr1.copy()
+    for i in arr2:
+        arr.append(i)
+    return arr
+```
+
+## Gettin' Cozy 
+
+```python
+#!/usr/bin/env python3
+def cat_matrices2D(mat1, mat2, axis=0):
+    if (axis == 0 and len(mat1[0]) != len(mat2[0])):
+        return None
+    if (axis == 1 and len(mat1) != len(mat2)):
+        return None
+    mat = []
+    for i in mat1:
+        mat.append(i.copy())
+    for i in range(len(mat2)):
+        if (axis == 0):
+            mat.append(mat2[i])
+        else:
+            for j in mat2[i]:
+                mat[i].append(j)
+    return mat
+```
 
 ## Ridin Bareback
 
-You should just know that if you have M1(n,p) and M2(p,l) then their multiplication will be M(n,l) with : 
-M[i][j]=Somme(M1[i][k]*M2[k][j], k allant de 1 à p
+```python
+#!/usr/bin/env python3
+def mat_mul(mat1, mat2):
+    if (len(mat1[0]) != len(mat2)):
+        return None
+    ma t= [[0] for i in range(len(mat1))]
+    for i in range(len(mat)):
+        mat[i] = [0 for j in range(len(mat2[0]))]
+        for j in range(len(mat[0])):
+            s = 0
+            for k in range(len(mat2)):
+                s = s + (mat1[i][k] * mat2[k][j])
+            mat[i][j] = s
+    return mat
+```
 
 ## Let The Butcher Slice It
-It's like slicing a list, with two parameters. For example :
-M[:2,-3:] will give you the 3 last columns of the two first lines.
+
+```python
+#!/usr/bin/env python3
+import numpy as np
+matrix = np.array([[1, 2, 3, 4, 5, 6], [7, 8, 9, 10, 11, 12],
+                   [13, 14, 15, 16, 17, 18], [19, 20, 21, 22, 23, 24]])
+mat1 = matrix[1:3]
+mat2 = matrix[:, 2:4]
+mat3 = matrix[-3:, -3:]
+print("The middle two rows of the matrix are:\n{}".format(mat1))
+print("The middle two columns of the matrix are:\n{}".format(mat2))
+print("The bottom-right, square, 3x3 matrix is:\n{}".format(mat3))
+```
+
+## I'll Use My Scale
+
+```python
+#!/usr/bin/env python3
+def np_shape(matrix):
+    return matrix.shape
+```
+
+## The Western Exchange
+
+```python
+#!/usr/bin/env python3
+def np_transpose(matrix):
+    new = matrix.transpose()
+    return new
+```
+
