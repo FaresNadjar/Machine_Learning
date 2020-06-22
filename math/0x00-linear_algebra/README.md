@@ -10,7 +10,7 @@ Let's suppose we have a list ```arr = [9, 8, 2, 3, 9, 4, 1, 0, 3]``` and we want
 
 Then here is the code to do it : 
 
-```
+```python
 #!/usr/bin/env python3
 arr = [9, 8, 2, 3, 9, 4, 1, 0, 3]
 arr1 = arr[:2]
@@ -27,7 +27,7 @@ Let's suppose we have a 2D matrix, and we want the middle to contain the 3rd and
 
 Then here is the code to do it : 
 
-```
+```python
 #!/usr/bin/env python3
 matrix = [[1, 3, 9, 4, 5, 8], [2, 4, 7, 3, 4, 0], [0, 3, 4, 6, 1, 5]]
 the_middle = []
@@ -40,10 +40,23 @@ print("The middle columns of the matrix are: {}".format(the_middle))
 
 The best way to know the shape of a matrix is to turn it into a numpy array and takes it shape : 
 
-```
+```python
 #!/usr/bin/env python3
 import numpy as np
 def matrix_shape(matrix) : 
 	matrix = np.array(matrix)
 	return (list(matrix.shape))
+```
+
+Let's suppose you don't have the right to import modules :
+
+```python
+#!/usr/bin/env python3
+def matrix_shape(matrix) :
+    shape=[len(mat)]
+    test=mat[0]
+        while (isinstance(test, list)): 
+            shape.append(len(test))
+            test=test[0]
+    return shape
 ```
