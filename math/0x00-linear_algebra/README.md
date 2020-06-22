@@ -61,7 +61,7 @@ def matrix_shape(matrix) :
     return shape
 ```
 
-## Flim Me Over
+## Flip Me Over
 
 How to transpose a matrix the classic way, without importing modules : 
 
@@ -81,7 +81,7 @@ How to add two lists :
 
 ```python
 def add_arrays(arr1, arr2):
-    if (len(arr1) != len(arr2))
+    if (len(arr1) != len(arr2)):
         return None
     arr=[]
     for i in range(len(arr1)):
