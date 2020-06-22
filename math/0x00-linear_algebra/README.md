@@ -94,3 +94,5 @@ def add_arrays(arr1, arr2):
 Same reasoning as in lists
 
 
+## Howdy Partner and Gettin' Cozy Hints
+To copy a list, use ```list.copy()```, if it's a list of list, use deepcopy
