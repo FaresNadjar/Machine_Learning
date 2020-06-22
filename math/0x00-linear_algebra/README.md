@@ -103,3 +103,5 @@ You should just know that if you have M1(n,p) and M2(p,l) then their multiplicat
 M[i][j]=Somme(M1[i][k]*M2[k][j], k allant de 1 à p
 
 ## Let The Butcher Slice It
+It's like slicing a list, with two parameters. For example :
+M[:2,-3:] will give you the 3 last columns of the two first lines.
