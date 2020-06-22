@@ -31,7 +31,19 @@ Then here is the code to do it :
 #!/usr/bin/env python3
 matrix = [[1, 3, 9, 4, 5, 8], [2, 4, 7, 3, 4, 0], [0, 3, 4, 6, 1, 5]]
 the_middle = []
-for i in matrix : 
-	the_middel.append([i[2],i[3]])
+for i in matrix: 
+	the_middle.append([i[2], i[3]])
 print("The middle columns of the matrix are: {}".format(the_middle))
+```
+
+## Size Me Please
+
+The best way to know the shape of a matrix is to turn it into a numpy array and takes it shape : 
+
+```
+#!/usr/bin/env python3
+import numpy as np
+def matrix_shape(matrix) : 
+	matrix = np.array(matrix)
+	return (list(matrix.shape))
 ```
