@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-
 def matrix_shape(matrix):
     shape = [len(matrix)]
     test = matrix[0]
