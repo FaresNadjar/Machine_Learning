@@ -1,5 +1,5 @@
 # Linear Algebra
-## Slice a list 
+## Slice Me Up 
 To slice a list l from x position to y position :```l[x:y]```. It starts at x and ends at y-1. Don't forget that the counters starts from 0 !!
 
 Let's suppose we have a list ```arr = [9, 8, 2, 3, 9, 4, 1, 0, 3]``` and we want to have slices of the list as follows : 
@@ -21,3 +21,16 @@ print("The last five numbers of the array are: {}".format(arr2))
 print("The 2nd through 6th numbers of the array are: {}".format(arr3))
 ```
 
+## Trim Me Down
+
+Let's suppose we have a 2D matrix, and we want the middle to contain the 3rd and 4th columns of matrix. No conditional statements allowed, only one loop. 
+
+Then here is the code to do it : 
+
+```
+#!/usr/bin/env python3
+matrix = [[1, 3, 9, 4, 5, 8], [2, 4, 7, 3, 4, 0], [0, 3, 4, 6, 1, 5]]
+the_middle = []
+# your code here
+print("The middle columns of the matrix are: {}".format(the_middle))
+```
