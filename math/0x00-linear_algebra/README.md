@@ -95,4 +95,4 @@ Same reasoning as in lists
 
 
 ## Howdy Partner and Gettin' Cozy Hints
-To copy a list, use ```list.copy()```, if it's a list of list, use deepcopy
+To copy a list, use ```list.copy()```
