@@ -7,5 +7,6 @@ def cat_matrices2D(mat1, mat2, axis=0):
         if (axis == 0):
             mat.append(mat2[i])
         else:
-            mat[i].append(mat2[i])
+            for j in mat2[i]:
+                mat[i].append(j)
     return mat
