@@ -159,3 +159,20 @@ def np_transpose(matrix):
     return new
 ```
 
+## Bracin' The Elements
+```python
+#!/usr/bin/env python3
+def np_elementwise(mat1, mat2):
+    return (mat1 + mat2, mat1 - mat2, mat1 * mat2, mat1 / mat2)
+```
+
+## Cat's Got Your Tongue
+```python
+#!/usr/bin/env python3
+import numpy as np
+def np_cat(mat1, mat2, axis=0):
+    return (np.concatenate(mat1, mat2, axis))
+```
+
+
+
