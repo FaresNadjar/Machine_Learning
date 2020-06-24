@@ -170,9 +170,17 @@ def np_elementwise(mat1, mat2):
 ```python
 #!/usr/bin/env python3
 import numpy as np
+
 def np_cat(mat1, mat2, axis=0):
-    return (np.concatenate(mat1, mat2, axis))
+    new = np.concatenate((mat1, mat2), axis)
+    return new
 ```
+
+## Saddle Up
+```python
+
+```
+
 
 
 
