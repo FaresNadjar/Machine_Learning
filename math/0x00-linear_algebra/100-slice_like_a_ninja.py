@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 def np_slice(matrix, axes={}):
-def np_slice(matrix, axes={}):
     new = matrix
     for i in axes.keys() :
         if i == 0 :
