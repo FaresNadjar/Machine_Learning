@@ -169,6 +169,7 @@ def np_elementwise(mat1, mat2):
 ## Cat's Got Your Tongue
 ```python
 #!/usr/bin/env python3
+
 import numpy as np
 
 def np_cat(mat1, mat2, axis=0):
@@ -178,8 +179,15 @@ def np_cat(mat1, mat2, axis=0):
 
 ## Saddle Up
 ```python
+#!/usr/bin/env python3
 
+import numpy as np
+
+def np_matmul(mat1, mat2):
+    new = np.matmul(mat1, mat2)
+    return new
 ```
+
 
 
 
