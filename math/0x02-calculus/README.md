@@ -14,5 +14,11 @@
 ## Hello, derivatives!
 3
 
-# A log on the fire
+## A log on the fire
+3
+
+## It is difficult to free fools from the chains they revere 
+1
+
+## Partial truths are often more insidious than total falsehoods 
 3
