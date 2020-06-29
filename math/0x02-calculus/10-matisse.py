@@ -4,7 +4,7 @@ def poly_derivative(poly):
         return None
     if (len(poly) <= 1):
         return [0]
-    l = []
-    for i in range(1, len(poly)) :
-        l.append(poly[i] * i)
-    return l
+    new = []
+    for i in range(1, len(poly)):
+        new.append(poly[i] * i)
+    return new

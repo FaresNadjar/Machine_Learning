@@ -36,5 +36,23 @@ def summation_i_squared(n):
 ```
 ## Derive happiness in oneself from a good day's work
 ```python
-
+#!/usr/bin/env python3
+def poly_derivative(poly):
+    if (not(poly) or not(isinstance(poly, list))):
+        return None
+    if (len(poly) <= 1):
+        return [0]
+    new = []
+    for i in range(1, len(poly)):
+        new.append(poly[i] * i)
+    return new
 ```
+
+## Good grooming is integral and impeccable style is a must
+2
+
+## We are all an integral part of the web of life
+3
+
+
+
