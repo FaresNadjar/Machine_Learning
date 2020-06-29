@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 def poly_derivative(poly):
-    if not(poly):
+    if (not(poly) or not(isinstance(poly, list))):
         return None
     if (len(poly) <= 1):
         return [0]
