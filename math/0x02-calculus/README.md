@@ -55,8 +55,15 @@ def poly_derivative(poly):
 3
 
 ## Create a definite plan for carrying out your desire and begin at once
-1
+3
 
 ## My talents fall within definite limitations
 4 
 
+## Winners are people with definite purpose in life
+2
+
+## Double whammy
+1
+
+## Integrate
