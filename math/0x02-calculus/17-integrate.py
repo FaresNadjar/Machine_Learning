@@ -8,7 +8,7 @@ def poly_integral(poly, C=0):
             new.append(0)
         else:
             res = (poly[i] / (i + 1))
-            if (res % int(res) == 0):
+            if (res == int(res)):
                 res = int(res)
             new.append(res)
     return new
