@@ -4,5 +4,8 @@ def poly_integral(poly, C=0):
         return None
     new = [C]
     for i in range(len(poly)):
-        new.append(poly[i] / i)
+        if (poly[i] == 0):
+            new.append(0)
+	else:
+            new.append(poly[i] / i)
     return new
