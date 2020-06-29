@@ -54,5 +54,9 @@ def poly_derivative(poly):
 ## We are all an integral part of the web of life
 3
 
+## Create a definite plan for carrying out your desire and begin at once
+1
 
+## My talents fall within definite limitations
+4 
 
