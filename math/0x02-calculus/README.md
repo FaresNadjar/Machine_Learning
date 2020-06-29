@@ -22,3 +22,8 @@
 
 ## Partial truths are often more insidious than total falsehoods 
 3
+
+## Put it all together and what do you get?
+3
+
+## Our life is the sum total of all the decisions we make every day, and those decisions are determined by our priorities
