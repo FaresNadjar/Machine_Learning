@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import math
 class Poisson:
     def __init__(self, data=None, lambtha=1.):
         if data == None:
@@ -14,7 +15,6 @@ class Poisson:
             else:
                 self.lambtha = sum(data) / len(data)
     def pmf(self, k):
-        import math
         if not(isinstance(k, int)) :
             k = int(k)
         if k <= 0:
