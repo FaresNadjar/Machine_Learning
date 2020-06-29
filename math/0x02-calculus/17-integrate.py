@@ -3,6 +3,8 @@ def poly_integral(poly, C=0):
     if (not(poly) or not(isinstance(poly, list)) or not(isinstance(C, int))):
         return None
     new = [C]
+    if poly == [0]:
+        return new
     for i in range(len(poly)):
         if (poly[i] == 0):
             new.append(0)
