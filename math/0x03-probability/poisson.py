@@ -18,10 +18,19 @@ class Poisson:
         e = 2.7182818285
         if not(isinstance(k, int)):
             k = int(k)
-        if k <= 0:
+        if k < 0:
             return 0
+        if k == 0:
+            return (e**(-self.lambtha))
         s = 1
         for i in range(1, k + 1):
             s = s * i
         res = (self.lambtha**k) * e**(-self.lambtha) / s
         return res
+    
+    def cdf(self, k):
+        if not(isinstance(k, int)):
+            k = int(k)
+        if k <= 0:
+            return 0
+        return sum(self.pmf(i) for i in range(k + 1))
