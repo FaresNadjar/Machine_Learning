@@ -53,7 +53,7 @@ class Binomial:
     def cdf(self, k):
         if not(isinstance(k, int)):
             k = int(k)
-        if k <= 0:
+        if k < 0:
             return 0
         if k >= self.n:
             return 1
