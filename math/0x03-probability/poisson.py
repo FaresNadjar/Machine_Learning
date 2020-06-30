@@ -16,7 +16,7 @@ class Poisson:
 
     def pmf(self, k):
         e = 2.7182818285
-        if not(isinstance(k, int) :
+        if not(isinstance(k, int)):
             k = int(k)
         if k <= 0:
             return 0
