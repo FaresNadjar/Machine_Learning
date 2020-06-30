@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-class Poisson:
+class Exponential:
     def __init__(self, data=None, lambtha=1.):
         if data is None:
             if lambtha <= 0:
@@ -12,25 +12,15 @@ class Poisson:
             if len(data) < 2:
                 raise ValueError("data must contain multiple values")
             else:
-                self.lambtha = sum(data) / len(data)
+                self.lambtha = 1 / (sum(data) / len(data))
 
-    def pmf(self, k):
+    def pdf(self, x):
         e = 2.7182818285
-        if not(isinstance(k, int)):
-            k = int(k)
-        if k < 0:
+        if x < 0:
             return 0
-        if k == 0:
-            return (e**(-self.lambtha))
-        s = 1
-        for i in range(1, k + 1):
-            s = s * i
-        res = (self.lambtha**k) * e**(-self.lambtha) / s
-        return res
+        return self.lambtha * e**(-self.lambtha * x)
 
-    def cdf(self, k):
-        if not(isinstance(k, int)):
-            k = int(k)
-        if k <= 0:
+    def cdf(self, x):
+        if x < 0:
             return 0
-        return sum(self.pmf(i) for i in range(k + 1))
+        return (1 - e**(-self.lambtha * x))
