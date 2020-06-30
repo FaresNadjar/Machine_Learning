@@ -29,23 +29,23 @@ class Binomial:
             return 0
         if self.n == 0:
             nfact = 1
-        else :
+        else:
             nfact = 1
             for i in range(1, self.n + 1):
                 nfact = nfact * i
         if k == 0:
             kfact = 1
-        else :
+        else:
             kfact = 1
             for i in range(1, k + 1):
                 kfact = kfact * i
         if self.n - k == 0:
             nkfact = 1
-        else :
+        else:
             nkfact = 1
             for i in range(1, self.n - k + 1):
                 nkfact = nkfact * i
-        Cnk =  nfact / kfact / nkfact
+        Cnk = nfact / kfact / nkfact
         res = Cnk * self.p**k
         res = res * (1 - self.p)**(self.n - k)
         return res
