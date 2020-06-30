@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-import math
 class Poisson:
     def __init__(self, data=None, lambtha=1.):
         if data == None:
@@ -15,6 +14,7 @@ class Poisson:
             else:
                 self.lambtha = sum(data) / len(data)
     def pmf(self, k):
+        e = 2.7182818285
         if not(isinstance(k, int)) :
             k = int(k)
         if k <= 0:
@@ -22,5 +22,5 @@ class Poisson:
         s = 1
         for i in range(1, k + 1) :
             s = s * i
-        res = (self.lambtha**k) * math.exp(-self.lambtha) / s
+        res = (self.lambtha**k) * e**(-self.lambtha) / s
         return res
