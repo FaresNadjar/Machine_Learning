@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 class Poisson:
     def __init__(self, data=None, lambtha=1.):
-        if data == None:
+        if data is None:
             if lambtha <= 0:
                 raise ValueError("lambtha must be a positive value")
             else:
@@ -13,14 +13,15 @@ class Poisson:
                 raise ValueError("data must contain multiple values")
             else:
                 self.lambtha = sum(data) / len(data)
+
     def pmf(self, k):
         e = 2.7182818285
-        if not(isinstance(k, int)) :
+        if not(isinstance(k, int) :
             k = int(k)
         if k <= 0:
             return 0
         s = 1
-        for i in range(1, k + 1) :
+        for i in range(1, k + 1):
             s = s * i
         res = (self.lambtha**k) * e**(-self.lambtha) / s
         return res
