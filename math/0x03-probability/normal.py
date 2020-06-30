@@ -14,7 +14,7 @@ class Normal:
                 raise ValueError("data must contain multiple values")
             else:
                 self.mean = sum(data) / len(data)
-                EE = sum(i * i for i in data) / len(data) 
+                EE = sum(i * i for i in data) / len(data)
                 self.stddev = (EE - self.mean**2)**(1 / 2)
 
     def z_score(self, x):
@@ -34,5 +34,7 @@ class Normal:
         PI = 3.1415926536
         z = self.z_score(x)
         x = z / (2**(1 / 2))
-        erf = 2 * (x - (x**3 / 3) + (x**5 / 10) - (x**7 / 42) + (x**9 / 216)) / (PI**(1 / 2))
+        erf = x - (x**3 / 3) + (x**5 / 10) - (x**7 / 42)
+        erf = erf + (x**9 / 216)
+        erf = 2 * erf / (PI**(1 / 2))
         return (1 + erf) / 2
