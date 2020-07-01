@@ -3,6 +3,7 @@
 Determinant of a matrix
 """
 
+
 def determinant(matrix):
     """
     Computes Determinant of a matrix
@@ -37,21 +38,19 @@ def determinant(matrix):
     for row in matrix:
         if len(matrix) != len(row):
             raise ValueError('matrix must be a square matrix')
-    
+
     # lentgh of the matrix
     n = len(matrix)
-    
+
     # case if n = 2
     if (n == 2):
         return (matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0])
-    
+
     # recursivity for more than 2
     res = 0
     for i in range(n):
-        if i % 2 == 0:
-            res += matrix[0][i] * determinant([row[:i] + row[i + 1:]
-                                           for row in matrix[1:]])
-        else:
-            res -= matrix[0][i] * determinant([row[:i] + row[i + 1:]
-                                           for row in matrix[1:]])
+        tmp = determinant([row[:i] + row[i + 1:] for row in matrix[1:]])
+        res += matrix[0][i] * tmp
+        if i % 2 != 0:
+            res = -res
     return res
