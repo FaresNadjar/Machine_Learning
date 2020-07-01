@@ -49,8 +49,10 @@ def determinant(matrix):
     # recursivity for more than 2
     res = 0
     for i in range(n):
-        tmp = determinant([row[:i] + row[i + 1:] for row in matrix[1:]])
-        res += matrix[0][i] * tmp
-        if i % 2 != 0:
-            res = -res
+        if i % 2 == 0:
+            res += matrix[0][i] * determinant([row[:i] + row[i + 1:]
+                                           for row in matrix[1:]])
+        else:
+            res -= matrix[0][i] * determinant([row[:i] + row[i + 1:]
+                                           for row in matrix[1:]])
     return res
