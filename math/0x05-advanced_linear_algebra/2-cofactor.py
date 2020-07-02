@@ -1,10 +1,8 @@
-# Advanced Linear Algebra
-## Determinant : 
-```python
 #!/usr/bin/env python3
 """
-Determinant of a matrix
+cofactor of a matrix
 """
+
 
 def determinant(matrix):
     """
@@ -40,14 +38,14 @@ def determinant(matrix):
     for row in matrix:
         if len(matrix) != len(row):
             raise ValueError('matrix must be a square matrix')
-    
+
     # lentgh of the matrix
     n = len(matrix)
-    
+
     # case if n = 2
     if (n == 2):
         return (matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0])
-    
+
     # recursivity for more than 2
     res = 0
     for i in range(n):
@@ -58,73 +56,6 @@ def determinant(matrix):
             res -= matrix[0][i] * determinant([row[:i] + row[i + 1:]
                                            for row in matrix[1:]])
     return res
-```
-
-## Minor
-```python
-#!/usr/bin/env python3
-"""
-minor of a matrix
-"""
-
-def minor(matrix):
-    """
-    Computes minor of a matrix
-    Args:
-        - matrix : the matrix on which we compute the determinant
-    Returns:
-        A matrix containing the minors of the matrix
-    """
-
-    # there is no matrix
-    if not matrix:
-        raise TypeError('matrix must be a list of lists')
-
-    # the shell is not a list
-    if not isinstance(matrix, list):
-        raise TypeError('matrix must be a list of lists')
-
-    # each row has to be a list
-    for row in matrix:
-        if not isinstance(row, list):
-            raise TypeError('matrix must be a list of lists')
-
-    # matrix wih size m x n
-    for row in matrix:
-        if len(matrix) != len(row):
-            raise ValueError('matrix must be a non-empty square matrix')
-
-    # empty matrix
-    if (matrix == [] or matrix[0] == []):
-        raise ValueError('matrix must be a non-empty square matrix')
-
-    # lentgh of the matrix
-    n = len(matrix)
-
-    # case if n = 1
-    if (n == 1):
-        return [[1]]
-
-    # case if n = 2
-    if (n == 2):
-        return [[matrix[1][1],matrix[1][0]],[matrix[0][1],matrix[0][0]]]
-    
-    # Solution for more than 2
-    res = []
-    for i in range(n):
-        res.append([])
-        for j in range(n):
-            tmp = determinant([row[:j] + row[j + 1:] for row in (matrix[:i] + matrix[i + 1 :])])
-            res[i].append(tmp)
-    return res
-```
-
-## Cofactor
-```python
-#!/usr/bin/env python3
-"""
-cofactor of a matrix
-"""
 
 def cofactor(matrix):
     """
@@ -178,5 +109,3 @@ def cofactor(matrix):
                 tmp = -tmp
             res[i].append(tmp)
     return res
-```
-
