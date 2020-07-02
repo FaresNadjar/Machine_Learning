@@ -141,6 +141,29 @@ def inverse(matrix):
     Returns:
         A matrix containing the adjugate of the matrix
     """
+
+    # there is no matrix
+    if not matrix:
+        raise TypeError('matrix must be a list of lists')
+
+    # the shell is not a list
+    if not isinstance(matrix, list):
+        raise TypeError('matrix must be a list of lists')
+
+    # each row has to be a list
+    for row in matrix:
+        if not isinstance(row, list):
+            raise TypeError('matrix must be a list of lists')
+
+    # matrix wih size m x n
+    for row in matrix:
+        if len(matrix) != len(row):
+            raise ValueError('matrix must be a non-empty square matrix')
+
+    # empty matrix
+    if (matrix == [] or matrix[0] == []):
+        raise ValueError('matrix must be a non-empty square matrix')
+
     # det matrix
     det = determinant(matrix)
 
