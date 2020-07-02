@@ -57,6 +57,7 @@ def determinant(matrix):
                                            for row in matrix[1:]])
     return res
 
+
 def minor(matrix):
     """
     Computes minor of a matrix
@@ -97,13 +98,13 @@ def minor(matrix):
 
     # case if n = 2
     if (n == 2):
-        return [[matrix[1][1],matrix[1][0]],[matrix[0][1],matrix[0][0]]]
-    
+        return [[matrix[1][1], matrix[1][0]], [matrix[0][1], matrix[0][0]]]
+
     # Solution for more than 2
     res = []
     for i in range(n):
         res.append([])
         for j in range(n):
-            tmp = determinant([row[:j] + row[j + 1:] for row in (matrix[:i] + matrix[i + 1 :])])
+            tmp = determinant([row[:j] + row[j + 1:] for row in (matrix[:i] + matrix[i + 1:])])
             res[i].append(tmp)
     return res
