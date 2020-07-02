@@ -29,12 +29,12 @@ class MultiNormal:
         """
 
         if(isinstance(data, type(None))):
-            raise TypeError("data must be a 2D numpy.ndarray")
+            raise TypeError('data must be a 2D numpy.ndarray')
 
         if (not isinstance(data, np.ndarray)) or (len(data.shape)) != 2:
             raise TypeError("data must be a 2D numpy.ndarray")
 
-        if(data.shape[1] < 2):
+        if (data.shape[1] < 2):
             raise ValueError("data must contain multiple data points")
 
         data = data.T
@@ -47,7 +47,6 @@ class MultiNormal:
 
         self.mean = mean.T
         self.cov = cov
-
 
     def pdf(self, x):
         """
@@ -63,9 +62,9 @@ class MultiNormal:
             x mush have the shape ({d}, 1)
         Returns: The value of the PDF
         """
-        
-        d = x.shape[0]
-        
+
+        d = self.cov.shape[0]
+
         if(isinstance(x, type(None))):
             raise TypeError('x must be a numpy.ndarray')
 
@@ -80,7 +79,7 @@ class MultiNormal:
 
         mean = self.mean
         cov = self.cov
-        
+
         x_m = x - mean
         pdf = (1. / (np.sqrt((2 * np.pi)**d * np.linalg.det(cov)))
                * np.exp(-(np.linalg.solve(cov, x_m).T.dot(x_m)) / 2))
