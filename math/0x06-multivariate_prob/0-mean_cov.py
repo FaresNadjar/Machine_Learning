@@ -1,6 +1,3 @@
-# Multivariate Probability
-## Mean and Covariance
-```python
 #!/usr/bin/env python3
 """ Mean & Covariance """
 
@@ -43,6 +40,3 @@ def mean_cov(X):
     cov = np.dot(x.T, x) / n
 
     return mean, cov
-```
-
-
