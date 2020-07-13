@@ -5,6 +5,7 @@ Module used to
 
 import numpy as np
 
+
 def likelihood(x, n, P):
     """
     Function that calculates the likelihood of obtaining this data given
