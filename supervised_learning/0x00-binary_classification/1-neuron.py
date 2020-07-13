@@ -1,3 +1,4 @@
+
 #!/usr/bin/env python3
 """
 Class Neuron
@@ -17,7 +18,7 @@ class Neuron:
         - nx   : number of input features to the neuron
         Return
         ------
-        Private attributes:
+        Public attributes:
         - W    : The weights vector for the neuron.
                  It is initialized with a random normal distribution.
         - b    : The bias for the neuron. Upon instantiation.
@@ -26,10 +27,11 @@ class Neuron:
                  It is initialized to 0.
         """
 
-        if not(isinstance(nx, int)):
+        if not isinstance(nx, int):
             raise TypeError("nx must be an integer")
+
         if nx < 1:
-            raise ValueError("nx must be positive integer")
+            raise ValueError("nx must be a positive integer")
 
         self.__W = np.random.randn(1, nx)
         self.__b = 0

@@ -1,4 +1,3 @@
-
 #!/usr/bin/env python3
 """
 Class Neuron
@@ -34,6 +33,5 @@ class Neuron:
             raise ValueError("nx must be a positive integer")
 
         self.W = np.random.randn(1, nx)
-        #  Draw random samples from a normal dist.
         self.b = 0
         self.A = 0
