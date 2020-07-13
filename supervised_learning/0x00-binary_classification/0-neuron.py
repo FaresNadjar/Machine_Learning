@@ -28,6 +28,7 @@ class Neuron:
 
         if not(isinstance(nx, int)):
             raise TypeError("nx must be an integer")
+
         if nx < 1:
             raise ValueError("nx must be positive integer")
 
