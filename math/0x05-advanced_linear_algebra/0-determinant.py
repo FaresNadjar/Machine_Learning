@@ -5,14 +5,6 @@ Determinant of a matrix
 
 
 def determinant(matrix):
-    """
-    Computes Determinant of a matrix
-    Args:
-        - matrix : the matrix on which we compute the determinant
-    Returns:
-        An Integer containing the determinant of the matrix
-    """
-
     # there is no matrix
     if not matrix:
         raise TypeError('matrix must be a list of lists')

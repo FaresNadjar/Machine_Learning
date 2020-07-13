@@ -5,20 +5,6 @@ import numpy as np
 
 
 def correlation(C):
-    """
-    Function that calculates a correlation matrix:
-    Args:
-        - C:        numpy.ndarray   Array of shape (d, d) containing
-                    a covariance matrix:
-        If C is not a 2D numpy.ndarray, raise a TypeError with the message:
-        C must be a numpy.ndarray
-        If C does not have shape (d, d), raise a ValueError with the message
-        C must be a 2D square matrix
-        If n is less than 2, raise a ValueError with the message
-        X must contain multiple data points
-    Returns:
-        - correlation   numpy ndarray   Matrix of shape (d, d) with its corr
-    """
     if (isinstance(C, type(None))):
         raise TypeError('C must be a numpy.ndarray')
 

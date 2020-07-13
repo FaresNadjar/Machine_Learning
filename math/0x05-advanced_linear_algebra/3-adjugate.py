@@ -5,14 +5,6 @@ adjugate of a matrix
 
 
 def determinant(matrix):
-    """
-    Computes Determinant of a matrix
-    Args:
-        - matrix : the matrix on which we compute the determinant
-    Returns:
-        An Integer containing the determinant of the matrix
-    """
-
     # there is no matrix
     if not matrix:
         raise TypeError('matrix must be a list of lists')
@@ -59,14 +51,6 @@ def determinant(matrix):
 
 
 def cofactor(matrix):
-    """
-    Computes cofactor of a matrix
-    Args:
-        - matrix : the matrix on which we compute the determinant
-    Returns:
-        A matrix containing the cofactors of the matrix
-    """
-
     # there is no matrix
     if not matrix:
         raise TypeError('matrix must be a list of lists')
@@ -113,14 +97,6 @@ def cofactor(matrix):
 
 
 def adjugate(matrix):
-    """
-    Computes adjugate of a matrix
-    Args:
-        - matrix : the matrix on which we compute the determinant
-    Returns:
-        A matrix containing the adjugate of the matrix
-    """
-
     # compute the cofactor of a matrix
     res = cofactor(matrix)
 
