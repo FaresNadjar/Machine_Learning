@@ -43,3 +43,10 @@ class Neuron:
         # Entering the output on A
         self.__A = forward
         return self.__A
+
+    def cost(self, Y, A):
+        r = -1 / Y.shape[1]
+        A_hat = 1.0000001 - A
+        Y_hat = 1 - Y
+        cost = r * np.sum(np.multiply(Y, np.log(A)) + np.multiply(Y_hat, np.log(A_hat)))
+        return cost
