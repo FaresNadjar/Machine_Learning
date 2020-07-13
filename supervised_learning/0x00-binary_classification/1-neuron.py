@@ -1,3 +1,4 @@
+
 #!/usr/bin/env python3
 """
 Class Neuron
@@ -7,25 +8,7 @@ import numpy as np
 
 
 class Neuron:
-    """ Class """
-
     def __init__(self, nx):
-        """
-        Initialize the Neuron class
-        Arguments
-        ---------
-        - nx   : number of input features to the neuron
-        Return
-        ------
-        Public attributes:
-        - W    : The weights vector for the neuron.
-                 It is initialized with a random normal distribution.
-        - b    : The bias for the neuron. Upon instantiation.
-                 It is initialized to 0.
-        - A    : The activated output of the neuron (prediction).
-                 It is initialized to 0.
-        """
-
         if not isinstance(nx, int):
             raise TypeError("nx must be an integer")
 
@@ -33,14 +16,18 @@ class Neuron:
             raise ValueError("nx must be a positive integer")
 
         self.__W = np.random.randn(1, nx)
+        #  Draw random samples from a normal dist.
         self.__b = 0
         self.__A = 0
 
+    @property
     def W(self):
         return self.__W
 
-    def b(self):
-        return self.__b
-
+    @property
     def A(self):
         return self.__A
+
+    @property
+    def b(self):
+        return self.__b
