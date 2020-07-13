@@ -1,3 +1,4 @@
+
 #!/usr/bin/env python3
 """
 Class Neuron
@@ -26,12 +27,13 @@ class Neuron:
                  It is initialized to 0.
         """
 
-        if not(isinstance(nx, int)):
+        if not isinstance(nx, int):
             raise TypeError("nx must be an integer")
 
         if nx < 1:
-            raise ValueError("nx must be positive integer")
+            raise ValueError("nx must be a positive integer")
 
         self.W = np.random.randn(1, nx)
+        #  Draw random samples from a normal dist.
         self.b = 0
         self.A = 0
