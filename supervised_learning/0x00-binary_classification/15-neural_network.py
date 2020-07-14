@@ -132,8 +132,8 @@ class NeuralNetwork:
         cost_list = []
         for i in range(iterations + 1):
             self.__A = self.forward_prop(X)
-            self.gradient_descent(X, Y, self.__A, alpha)
-            cost = self.cost(Y, self.__A)
+            self.gradient_descent(X, Y, self.__A1, self.__A2, alpha)
+            cost = self.cost(Y, self.__A2)
             if verbose is True:
                 if (i % step == 0 or step == iterations):
                     print("Cost after {} iterations: {}".format(i, cost))
@@ -148,8 +148,5 @@ class NeuralNetwork:
             plt.xlabel('iterations')
             plt.ylabel('cost')
             plt.show()
-        for _ in range(iterations):
-            self.forward_prop(X)
-            self.gradient_descent(X, Y, self.__A1, self.__A2, alpha)
 
         return(self.evaluate(X, Y))
