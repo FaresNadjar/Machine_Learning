@@ -93,27 +93,19 @@ class NeuralNetwork:
         return (labels, cost)
 
     def gradient_descent(self, X, Y, A1, A2, alpha=0.05):
-        # Derivative respect to weight2
-        dw2 = np.dot(A2 - Y, A1.T) / len(X[0])
-
-        # Derivative respect to bias2
-        db2 = (A2 - Y).mean(axis=1, keepdims=True)
-
-        # Update w2
-        self.__W2 = self.__W2 - (alpha * dw2)
-
-        # Update b2
-        self.__b2 = self.__b2 - (alpha * db2)
-
-        # Derivative respect to weight1
-        tmp = np.dot(self.__W2.T, A2 - Y) * A1 * (1 - A1)
+        # Derivative respect to weight
+        dw2 = np.dot((A2 - Y), A1.T) / len(X[0])
+        tmp = np.dot(self.__W2.T, (A2 - Y)) * A1 * (1 - A1)
         dw1 = np.dot(tmp, X.T) / len(X[0])
 
-        # Derivative respect to bias1
+        # Derivative respect to bias
+        db2 = (A2 - Y).mean(axis=1, keepdims=True)
         db1 = tmp.mean(axis=1, keepdims=True)
 
-        # Update w1
-        self.__W1 = self.__W1 - (alpha * dw1)
+        # Update w2 & b2
+        self.__W2 = self.__W2 - (alpha * dw2)
+        self.__b2 = self.__b2 - (alpha * db2)
 
-        # Update b1
+        # Update w1 & b1
+        self.__W1 = self.__W1 - (alpha * dw1)
         self.__b1 = self.__b1 - (alpha * db1)
