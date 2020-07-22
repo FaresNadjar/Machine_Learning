@@ -35,7 +35,7 @@ class Neuron:
             raise ValueError("nx must be a positive integer")
 
         self.__W = np.random.randn(1, nx)
-        #  Draw random samples from a normal dist.
+        #  Draw random weights from a normal dist.
         self.__b = 0
         self.__A = 0
 
@@ -91,7 +91,7 @@ class Neuron:
         - __A   : float
                   Value of the attribute __A.
         """
-        # z = w.X + b
+        # z = W.X + b
         z = np.matmul(self.W, X) + self.b
         # We used the sigmoid function, could use another one
         forward_prop = 1 / (1 + np.exp(-1 * z))
@@ -117,7 +117,7 @@ class Neuron:
         m = Y.shape[1]
         j = - (1 / m)
 
-        Â = 1.0000001 - A
+        Â = 1.0000001 - A #1.00000001 to avoid division by 0 if A = 1
         Ŷ = 1 - Y
         log_A = np.log(A)
         log_Â = np.log(Â)

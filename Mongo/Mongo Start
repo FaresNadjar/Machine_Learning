@@ -1,0 +1,13 @@
+======> MongoDB
+
+> sudo service mongod start
+> mongo
+> connect to Tarak's Server : 
+mongo mongodb://reader:miWB2TM4@51.68.214.156:27017/
+
+
+======> MongoDump a collection
+
+> mongodump --host 51.68.214.156 --username "reader" --password "miWB2TM4" --port 27017 --authenticationDatabase admin --db DRL --collection GameDRLTraining
+
+
